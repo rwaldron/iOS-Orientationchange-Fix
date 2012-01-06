@@ -18,6 +18,7 @@
     if( !meta ){ return; }
 
     function restoreZoom(){
+        document.getElementById("restoreZoom").innerHTML = +document.getElementById("restoreZoom").innerHTML + 1;
         meta.setAttribute( "content", enabledZoom );
         enabled = true;
     }
@@ -28,13 +29,14 @@
     }
 
     function checkTilt( e ){
+        document.getElementById("checkTilt").innerHTML = +document.getElementById("checkTilt").innerHTML + 1;
         orientation = Math.abs( w.orientation );
         rotation = Math.abs( e.gamma );
 
         if( rotation > 8 && orientation === 0 ){
             if( enabled ){
                 disableZoom();
-            }   
+            }
         }
         else {
             if( !enabled ){
